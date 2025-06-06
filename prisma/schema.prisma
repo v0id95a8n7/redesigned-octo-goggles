@@ -22,6 +22,7 @@ model User {
   password        String?
   picture         String
   notifications   Notification[]
+  articles        Article[]
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @updatedAt @map("updated_at")
 }
@@ -36,6 +37,24 @@ model Notification {
   link              String?
   read              Boolean @default(false)
   archived          Boolean @default(false)
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            Int      @map("user_id")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+}
+
+model Article {
+  @@map("articles")
+
+  id                Int      @id @default(autoincrement())
+  title             String
+  content           String   @db.Text
+  excerpt           String?  @db.Text
+  url               String   @unique
+  author            String?
+  siteName          String?  @map("site_name")
+  publishedTime     String?  @map("published_time")
+  length            Int?
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId            Int      @map("user_id")
   createdAt         DateTime @default(now()) @map("created_at")

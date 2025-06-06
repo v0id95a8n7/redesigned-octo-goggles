@@ -1,10 +1,24 @@
-export default function Dashboard() {
+import { ArticlesDashboard } from "@/components/articles/articles-dashboard";
+import { getUserArticles } from "@/lib/actions/articles";
+import { Suspense } from "react";
+
+export default async function Dashboard() {
+  const articles = await getUserArticles();
+
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen bg-gray-100 gap-4">
-      <h1 className="text-6xl font-bold">Welcome here!</h1>
-      <h2 className="text-xl font-medium">
-        If you see this, you successfully authenticated.
-      </h2>
+    <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="flex flex-col gap-8">
+        {/* Header */}
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-2">My Articles</h1>
+          <p className="text-muted-foreground">
+            Save and read articles from anywhere on the web
+          </p>
+        </div>
+
+        {/* Content */}
+        <ArticlesDashboard initialArticles={articles} />
+      </div>
     </div>
   );
 }
