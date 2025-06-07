@@ -202,3 +202,44 @@
 .article-content ins {
   @apply underline text-foreground;
 }
+
+/* Spoiler/Details/Summary styles for proper readability */
+.article-content details {
+  @apply border border-border rounded-lg my-4 p-4 bg-muted/50;
+}
+
+.article-content details[open] {
+  @apply bg-muted/30;
+}
+
+.article-content summary {
+  @apply cursor-pointer font-medium text-foreground hover:text-foreground/80;
+  list-style: none;
+}
+
+.article-content summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-content summary::before {
+  content: "▶ ";
+  display: inline-block;
+  transition: transform 0.2s ease;
+  margin-right: 0.5rem;
+  color: hsl(var(--foreground));
+}
+
+.article-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.article-content details > *:not(summary) {
+  @apply text-foreground mt-2;
+}
+
+/* Ensure proper contrast for spoiler content */
+.article-content details p,
+.article-content details div,
+.article-content details span {
+  @apply text-foreground;
+}

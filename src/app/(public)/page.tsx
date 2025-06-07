@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  IconBook,
   IconBookmark,
   IconBrandGithub,
   IconBrandGoogle,
   IconExternalLink,
+  IconNotebook,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -15,7 +17,7 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center gap-8 max-w-7xl h-[80vh] mx-auto p-4">
         <div className="text-center space-y-6">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <IconBookmark className="h-12 w-12 text-primary" />
+            <IconNotebook className="h-16 w-16 text-primary" />
             <h1 className="text-6xl font-bold">Reedr</h1>
           </div>
 
@@ -82,7 +84,7 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <IconBookmark className="h-5 w-5" />
+                <IconBook className="h-5 w-5" />
                 Beautiful Reading
               </CardTitle>
             </CardHeader>

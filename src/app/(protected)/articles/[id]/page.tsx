@@ -48,7 +48,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {/* Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-between mb-6">
           <Button variant="ghost" size="sm" asChild>
             <Link href="/dashboard">
               <IconArrowLeft className="mr-2 h-4 w-4" />
@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <Button variant="outline" size="sm" asChild>
             <a href={article.url} target="_blank" rel="noopener noreferrer">
               <IconExternalLink className="mr-2 h-4 w-4" />
-              Original Article
+              Original
             </a>
           </Button>
         </div>
@@ -103,12 +103,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </Link>
           </Button>
 
-          <Button variant="outline" asChild>
+          {/* <Button variant="outline" asChild>
             <a href={article.url} target="_blank" rel="noopener noreferrer">
               <IconExternalLink className="mr-2 h-4 w-4" />
               View Original
             </a>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

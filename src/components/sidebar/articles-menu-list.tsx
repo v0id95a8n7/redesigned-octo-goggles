@@ -25,10 +25,9 @@ export function ArticlesMenuList({ articles }: ArticlesMenuListProps) {
       </SidebarMenuSub>
     );
   }
-
   return (
     <SidebarMenuSub>
-      {articles.slice(0, 5).map((article) => (
+      {articles.slice(0, 10).map((article) => (
         <SidebarMenuSubItem key={article.id}>
           <SidebarMenuSubButton asChild>
             <Link href={`/articles/${article.id}`}>
@@ -38,7 +37,7 @@ export function ArticlesMenuList({ articles }: ArticlesMenuListProps) {
           </SidebarMenuSubButton>
         </SidebarMenuSubItem>
       ))}
-      {articles.length > 5 && (
+      {articles.length > 10 && (
         <SidebarMenuSubItem>
           <SidebarMenuSubButton asChild>
             <Link href="/dashboard" className="text-muted-foreground">

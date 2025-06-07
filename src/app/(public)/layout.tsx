@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import CatalystBadge from "@/components/footer/catalyst-badge";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { IconBookmark, IconNotebook } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
@@ -19,8 +19,8 @@ export default async function Layout({
           href="/"
           className="flex gap-2 items-center mr-auto font-medium text-lg whitespace-pre"
         >
-          <Image src="/icon.svg" alt="Catalyst" width={30} height={30} />
-          Reedr
+          <IconNotebook width={24} height={24} />
+          <h1 className="text-xl font-bold">Reedr</h1>
         </Link>
         {session ? (
           <Link href="/dashboard">

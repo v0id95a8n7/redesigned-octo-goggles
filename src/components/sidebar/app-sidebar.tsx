@@ -24,7 +24,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { getUserFromSession } from "@/lib/dao/users";
-import { IconBookmark, IconChevronDown } from "@tabler/icons-react";
+import { IconBookmark, IconChevronDown, IconNotebook } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,9 +35,12 @@ export async function AppSidebar() {
     <Sidebar>
       {" "}
       <SidebarHeader className="pl-[22px] py-3.5">
-        <Link href="/dashboard" className="flex items-center gap-2">
-          <Image src="/icon.svg" alt="Reedr" width={28} height={28} />
-          Reedr
+        <Link
+          href="/dashboard"
+          className="flex gap-2 items-center mr-auto font-medium text-lg whitespace-pre"
+        >
+          <IconNotebook width={24} height={24} />
+          <h1 className="text-xl font-bold">Reedr</h1>
         </Link>
       </SidebarHeader>
       <SidebarContent>
@@ -52,7 +55,7 @@ export async function AppSidebar() {
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton className="w-full hover:bg-transparent">
                     <IconBookmark className="size-4" />
-                    <span>My Articles</span>
+                    <span>Saved</span>
                     <IconChevronDown className="size-4 transition-transform group-data-[state=open]/collapsible:rotate-180 ml-auto" />
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
