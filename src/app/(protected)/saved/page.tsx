@@ -11,7 +11,7 @@ export default async function SavedArticles() {
         {" "}
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Saved Articles</h1>
+          <h1 className="text-4xl font-bold mb-4 text-left">Saved Articles</h1>
         </div>
         {/* Content */}
         <ArticlesDashboard initialArticles={articles} />

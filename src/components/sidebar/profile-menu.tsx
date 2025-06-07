@@ -57,18 +57,6 @@ export default function ProfileMenu({
         </Link>
       </DropdownMenuItem>
       <DropdownMenuSeparator />
-      <DropdownMenuItem className="p-0 h-10">
-        <a
-          href="/privacy-policy"
-          target="_blank"
-          className="flex items-center gap-2 size-full px-2 py-1.5"
-          onClick={() => isMobile && setOpenMobile(false)}
-        >
-          <FileText className="shrink-0" />
-          <span>Privacy Policy</span>
-        </a>
-      </DropdownMenuItem>
-      <DropdownMenuSeparator />
       <DropdownMenuItem asChild>
         <SignOut />
       </DropdownMenuItem>

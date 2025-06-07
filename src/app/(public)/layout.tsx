@@ -14,9 +14,10 @@ export default async function Layout({
 
   return (
     <div className="flex flex-col flex-1 mx-auto max-w-7xl w-full">
+      {" "}
       <header className="flex w-full p-4 gap-4 justify-end items-center">
         <Link
-          href="/"
+          href={session ? "/saved" : "/landing"}
           className="flex gap-2 items-center mr-auto font-medium text-lg whitespace-pre"
         >
           <IconNotebook width={24} height={24} />
@@ -24,7 +25,7 @@ export default async function Layout({
         </Link>
         {session ? (
           <Link href="/saved">
-            <Button>App</Button>
+            <Button>Open App</Button>
           </Link>
         ) : (
           <>
