@@ -23,8 +23,8 @@ export default async function Layout({
           <h1 className="text-xl font-bold">Reedr</h1>
         </Link>
         {session ? (
-          <Link href="/dashboard">
-            <Button>Dashboard</Button>
+          <Link href="/saved">
+            <Button>App</Button>
           </Link>
         ) : (
           <>

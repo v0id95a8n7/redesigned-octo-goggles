@@ -48,9 +48,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       {/* Header */}
       <div className="mb-8">
+        {" "}
         <div className="flex items-center justify-between mb-6">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/dashboard">
+            <Link href="/saved">
               <IconArrowLeft className="mr-2 h-4 w-4" />
               Back to Articles
             </Link>
@@ -63,9 +64,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </a>
           </Button>
         </div>
-
         <h1 className="text-4xl font-bold leading-tight mb-4">{article.title}</h1>
-
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
           {article.siteName && <Badge variant="secondary">{article.siteName}</Badge>}
 
@@ -95,9 +94,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
       {/* Bottom Navigation */}
       <div className="mt-12 pt-8 border-t">
+        {" "}
         <div className="flex justify-between items-center">
           <Button variant="ghost" asChild>
-            <Link href="/dashboard">
+            <Link href="/saved">
               <IconArrowLeft className="mr-2 h-4 w-4" />
               Back to Articles
             </Link>

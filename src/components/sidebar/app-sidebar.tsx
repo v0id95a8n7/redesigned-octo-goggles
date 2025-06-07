@@ -1,12 +1,6 @@
 import { AddArticleMenuItem } from "@/components/articles/add-article-menu-item";
-import { ArticlesMenu } from "@/components/sidebar/articles-menu";
 import ProfileMenu from "@/components/sidebar/profile-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,9 +16,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import { getUserFromSession } from "@/lib/dao/users";
-import { IconBookmark, IconChevronDown, IconNotebook } from "@tabler/icons-react";
+import { IconBookmark, IconNotebook } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,35 +30,31 @@ export async function AppSidebar() {
     <Sidebar>
       {" "}
       <SidebarHeader className="pl-[22px] py-3.5">
+        {" "}
         <Link
-          href="/dashboard"
+          href="/saved"
           className="flex gap-2 items-center mr-auto font-medium text-lg whitespace-pre"
         >
           <IconNotebook width={24} height={24} />
           <h1 className="text-xl font-bold">Reedr</h1>
         </Link>
       </SidebarHeader>
+      <SidebarSeparator />
       <SidebarContent>
         {" "}
         <SidebarGroup className="p-2">
           <SidebarMenu>
             <SidebarMenuItem>
               <AddArticleMenuItem />
+            </SidebarMenuItem>{" "}
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href="/saved">
+                  <IconBookmark className="size-4" />
+                  <span>Saved</span>
+                </Link>
+              </SidebarMenuButton>
             </SidebarMenuItem>
-            <Collapsible defaultOpen className="group/collapsible">
-              <SidebarMenuItem>
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuButton className="w-full hover:bg-transparent">
-                    <IconBookmark className="size-4" />
-                    <span>Saved</span>
-                    <IconChevronDown className="size-4 transition-transform group-data-[state=open]/collapsible:rotate-180 ml-auto" />
-                  </SidebarMenuButton>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <ArticlesMenu />
-                </CollapsibleContent>
-              </SidebarMenuItem>
-            </Collapsible>
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>

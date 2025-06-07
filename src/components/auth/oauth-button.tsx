@@ -1,6 +1,5 @@
 "use client";
 
-import LastUsedIndicator from "@/components/auth/last-used-indicator";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -27,7 +26,6 @@ export default function OAuthButton({
         className="pointer-events-none"
       />
       <span className="pointer-events-none">{title}</span>
-      <LastUsedIndicator provider={provider} className="text-black sm:text-foreground" />
     </Button>
   );
 }

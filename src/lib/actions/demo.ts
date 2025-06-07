@@ -21,7 +21,7 @@ export async function createDemoUser() {
       {
         title: "Welcome to Reedr",
         content:
-          "<h1>Welcome to Reedr</h1><p>This is a sample article to show how the app works. You can save articles from any website and read them in a clean, distraction-free format.</p><p>Try adding your own articles by pasting a URL in the dashboard!</p>",
+          "<h1>Welcome to Reedr</h1><p>This is a sample article to show how the app works. You can save articles from any website and read them in a clean, distraction-free format.</p><p>Try adding your own articles by pasting a URL in the saved articles page!</p>",
         excerpt: "This is a sample article to show how the Reedr works.",
         url: "https://example.com/welcome",
         author: "Reedr Team",
@@ -54,7 +54,7 @@ export async function createDemoUser() {
       redirect: false,
     });
 
-    redirect("/dashboard");
+    redirect("/saved");
   } catch (error) {
     console.error("Failed to create demo user:", error);
     redirect("/login?error=demo_failed");
