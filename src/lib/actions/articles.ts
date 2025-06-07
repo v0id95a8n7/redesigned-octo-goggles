@@ -32,11 +32,10 @@ export async function saveArticle(formData: FormData) {
   }
 
   const { url } = result.data;
-
-  // Check if article already exists
+  // Check if article already exists for this user
   const existingArticle = await getArticleByUrl(url, Number(session.user.id));
   if (existingArticle) {
-    throw new Error("Article already saved");
+    return existingArticle;
   }
 
   // Parse the article

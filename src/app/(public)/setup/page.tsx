@@ -7,7 +7,7 @@ export default function Setup() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Articles App Setup</h1>
+        <h1 className="text-4xl font-bold mb-4">Reedr Setup</h1>
         <p className="text-muted-foreground text-lg">
           Your articles app is ready! Follow these steps to complete the setup.
         </p>

@@ -1,6 +1,5 @@
 "use client";
 
-import { AddArticleForm } from "@/components/articles/add-article-form";
 import { ArticleList } from "@/components/articles/article-list";
 import { getUserArticles } from "@/lib/actions/articles";
 import type { Article } from "@prisma/client";
@@ -33,22 +32,14 @@ export function ArticlesDashboard({ initialArticles = [] }: ArticlesDashboardPro
   }
 
   return (
-    <>
-      {/* Add Article Form */}
-      <div className="flex justify-center">
-        <AddArticleForm onSuccess={handleSuccess} />
-      </div>
-
-      {/* Articles List */}
-      <div>
-        {isPending ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Loading articles...</p>
-          </div>
-        ) : (
-          <ArticleList articles={articles} onArticleRemoved={handleSuccess} />
-        )}
-      </div>
-    </>
+    <div>
+      {isPending ? (
+        <div className="text-center py-12">
+          <p className="text-muted-foreground">Loading articles...</p>
+        </div>
+      ) : (
+        <ArticleList articles={articles} onArticleRemoved={handleSuccess} />
+      )}
+    </div>
   );
 }

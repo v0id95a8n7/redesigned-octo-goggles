@@ -11,13 +11,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const articleId = parseInt(params.id);
+  const { id } = await params;
+  const articleId = parseInt(id);
 
   if (isNaN(articleId)) {
     notFound();

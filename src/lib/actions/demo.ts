@@ -19,13 +19,13 @@ export async function createDemoUser() {
     // Create sample articles
     const sampleArticles = [
       {
-        title: "Welcome to Articles App",
+        title: "Welcome to Reedr",
         content:
-          "<h1>Welcome to Articles App</h1><p>This is a sample article to show how the app works. You can save articles from any website and read them in a clean, distraction-free format.</p><p>Try adding your own articles by pasting a URL in the dashboard!</p>",
-        excerpt: "This is a sample article to show how the Articles App works.",
+          "<h1>Welcome to Reedr</h1><p>This is a sample article to show how the app works. You can save articles from any website and read them in a clean, distraction-free format.</p><p>Try adding your own articles by pasting a URL in the dashboard!</p>",
+        excerpt: "This is a sample article to show how the Reedr works.",
         url: "https://example.com/welcome",
-        author: "Articles App Team",
-        siteName: "Articles App",
+        author: "Reedr Team",
+        siteName: "Reedr",
         length: 150,
         userId: demoUser.id,
       },

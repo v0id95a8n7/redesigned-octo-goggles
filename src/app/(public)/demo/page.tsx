@@ -11,8 +11,8 @@ export default function Demo() {
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-muted-foreground">
-            Try the Articles App with a demo account. This will create a temporary user
-            with sample articles.
+            Try Reedr with a demo account. This will create a temporary user with sample
+            articles.
           </p>
 
           <form action={createDemoUser}>

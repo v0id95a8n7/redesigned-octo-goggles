@@ -16,7 +16,7 @@ export default function Home() {
         <div className="text-center space-y-6">
           <div className="flex items-center justify-center gap-3 mb-8">
             <IconBookmark className="h-12 w-12 text-primary" />
-            <h1 className="text-6xl font-bold">Articles App</h1>
+            <h1 className="text-6xl font-bold">Reedr</h1>
           </div>
 
           <p className="text-2xl text-muted-foreground max-w-2xl">

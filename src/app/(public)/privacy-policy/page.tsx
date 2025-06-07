@@ -3,8 +3,8 @@ import { Metadata } from "next";
 
 const path = "/privacy-policy";
 // TODO: change to the actual company
-const title = "Privacy Policy | Catalyst";
-const description = "Privacy Policy for Catalyst";
+const title = "Privacy Policy | Reedr";
+const description = "Privacy Policy for Reedr";
 
 export const metadata: Metadata = {
   title,
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
             <strong>Company</strong> (referred to as either &quot;the Company&quot;,
             &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to
             {/* TODO: change to the actual company */}
-            Catalyst.
+            Reedr.
           </p>
         </li>
         <li>
