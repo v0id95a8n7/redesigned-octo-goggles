@@ -1,3 +1,4 @@
+import { ReadingSettingsPopover } from "@/components/articles/reading-settings-popover";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getArticle } from "@/lib/actions/articles";
@@ -32,7 +33,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   function formatReadingTime(length: number | null) {
     if (!length) return null;
-    const minutes = Math.ceil(length / 200);
+    const minutes = Math.ceil(length / 1500); // Assuming average reading speed of 1500 letters per minute
     return `${minutes} min read`;
   }
 
@@ -55,14 +56,16 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <IconArrowLeft className="mr-2 h-4 w-4" />
               Back to Articles
             </Link>
-          </Button>
-
-          <Button variant="outline" size="sm" asChild>
-            <a href={article.url} target="_blank" rel="noopener noreferrer">
-              <IconExternalLink className="mr-2 h-4 w-4" />
-              Original
-            </a>
-          </Button>
+          </Button>{" "}
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                <IconExternalLink className="mr-2 h-4 w-4" />
+                Original
+              </a>
+            </Button>
+            <ReadingSettingsPopover />
+          </div>
         </div>
         <h1 className="text-4xl font-bold leading-tight mb-4">{article.title}</h1>
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -82,16 +85,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <span>Saved {formatDate(article.createdAt)}</span>
           </div>
         </div>
-      </div>
-
+      </div>{" "}
       {/* Article Content */}
-      <article className="prose prose-gray max-w-none dark:prose-invert">
+      <article>
         <div
           dangerouslySetInnerHTML={{ __html: article.content }}
           className="article-content"
         />
       </article>
-
       {/* Bottom Navigation */}
       <div className="mt-12 pt-8 border-t">
         {" "}

@@ -18,6 +18,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        "noto-sans": ["var(--font-noto-sans)", "sans-serif"],
+        "noto-serif": ["var(--font-noto-serif)", "serif"],
+        "fira-code": ["var(--font-fira-code)", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

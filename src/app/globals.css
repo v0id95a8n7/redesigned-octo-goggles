@@ -81,6 +81,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-geist, ui-sans-serif, system-ui, sans-serif);
+  }
+  
+  /* Apply Geist font to UI elements explicitly */
+  nav, header, footer, aside, 
+  .sidebar, .navigation, .menu,
+  button, .button, input, textarea, select,
+  .popover, .dialog, .sheet,
+  .ui-element {
+    font-family: var(--font-geist, ui-sans-serif, system-ui, sans-serif);
   }
 }
 
@@ -100,10 +110,7 @@
   }
 }
 
-/* Article content styles */
-.article-content {
-  @apply prose prose-gray max-w-none dark:prose-invert;
-}
+/* Article content styles - using custom font variables below */
 
 .article-content h1,
 .article-content h2,
@@ -111,110 +118,181 @@
 .article-content h4,
 .article-content h5,
 .article-content h6 {
-  @apply font-bold mt-8 mb-4 text-foreground;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content h1 {
-  @apply text-3xl;
+  font-size: 1.875rem;
 }
 
 .article-content h2 {
-  @apply text-2xl;
+  font-size: 1.5rem;
 }
 
 .article-content h3 {
-  @apply text-xl;
+  font-size: 1.25rem;
 }
 
 .article-content p {
-  @apply mb-4 leading-relaxed text-foreground;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: hsl(var(--foreground));
 }
 
 .article-content a {
-  @apply text-blue-600 hover:underline dark:text-blue-400;
+  color: rgb(37 99 235);
+  text-decoration: none;
+}
+
+.article-content a:hover {
+  text-decoration: underline;
+}
+
+.dark .article-content a {
+  color: rgb(96 165 250);
 }
 
 .article-content img {
-  @apply rounded-lg shadow-sm my-6 max-w-full h-auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .article-content blockquote {
-  @apply border-l-4 border-gray-300 pl-4 italic my-6 text-foreground opacity-80;
+  border-left: 4px solid hsl(var(--border));
+  padding-left: 1rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+  opacity: 0.8;
 }
 
 .article-content pre {
-  @apply bg-muted p-4 rounded-lg overflow-x-auto my-6 text-foreground;
+  background-color: hsl(var(--muted));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content pre code {
-  @apply bg-transparent p-0 text-foreground;
+  background-color: transparent;
+  padding: 0;
+  color: hsl(var(--foreground));
 }
 
 .article-content code {
-  @apply bg-muted px-1 py-0.5 rounded text-sm text-foreground;
+  background-color: hsl(var(--muted));
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content ul,
 .article-content ol {
-  @apply my-4 pl-6 text-foreground;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content li {
-  @apply mb-2 text-foreground;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content hr {
-  @apply my-8 border-border;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: hsl(var(--border));
 }
 
-/* Additional styles for better contrast */
 .article-content table {
-  @apply border-collapse border border-border my-6 text-foreground;
+  border-collapse: collapse;
+  border: 1px solid hsl(var(--border));
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content th,
 .article-content td {
-  @apply border border-border px-4 py-2 text-foreground;
+  border: 1px solid hsl(var(--border));
+  padding: 1rem;
+  color: hsl(var(--foreground));
 }
 
 .article-content th {
-  @apply bg-muted font-semibold text-foreground;
+  background-color: hsl(var(--muted));
+  font-weight: 600;
+  color: hsl(var(--foreground));
 }
 
 .article-content strong,
 .article-content b {
-  @apply font-bold text-foreground;
+  font-weight: bold;
+  color: hsl(var(--foreground));
 }
 
 .article-content em,
 .article-content i {
-  @apply italic text-foreground;
+  font-style: italic;
+  color: hsl(var(--foreground));
 }
 
 .article-content mark {
-  @apply bg-yellow-200 dark:bg-yellow-800 px-1 text-foreground;
+  background-color: rgb(254 240 138);
+  padding: 0.125rem 0.25rem;
+  color: hsl(var(--foreground));
+}
+
+.dark .article-content mark {
+  background-color: rgb(133 77 14);
 }
 
 .article-content del {
-  @apply line-through text-foreground opacity-70;
+  text-decoration: line-through;
+  color: hsl(var(--foreground));
+  opacity: 0.7;
 }
 
 .article-content ins {
-  @apply underline text-foreground;
+  text-decoration: underline;
+  color: hsl(var(--foreground));
 }
 
-/* Spoiler/Details/Summary styles for proper readability */
 .article-content details {
-  @apply border border-border rounded-lg my-4 p-4 bg-muted/50;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: hsl(var(--muted) / 0.5);
 }
 
 .article-content details[open] {
-  @apply bg-muted/30;
+  background-color: hsl(var(--muted) / 0.3);
 }
 
 .article-content summary {
-  @apply cursor-pointer font-medium text-foreground hover:text-foreground/80;
+  cursor: pointer;
+  font-weight: 500;
+  color: hsl(var(--foreground));
   list-style: none;
+}
+
+.article-content summary:hover {
+  color: hsl(var(--foreground) / 0.8);
 }
 
 .article-content summary::-webkit-details-marker {
@@ -234,12 +312,132 @@
 }
 
 .article-content details > *:not(summary) {
-  @apply text-foreground mt-2;
+  color: hsl(var(--foreground));
+  margin-top: 0.5rem;
 }
 
-/* Ensure proper contrast for spoiler content */
 .article-content details p,
 .article-content details div,
 .article-content details span {
-  @apply text-foreground;
+  color: hsl(var(--foreground));
+}
+
+/* Reading Settings Styles - Override everything */
+:root {
+  --article-font-size: 16px;
+  --article-line-height: 1.6;
+  --article-font-family: var(--font-noto-serif), serif;
+  --article-text-align: left;
+}
+
+/* Main article content container */
+.article-content {
+  font-size: var(--article-font-size) !important;
+  line-height: var(--article-line-height) !important;
+  font-family: var(--article-font-family) !important;
+  text-align: var(--article-text-align) !important;
+  transition: font-family 0.3s ease, font-size 0.3s ease, line-height 0.3s ease !important;
+  color: hsl(var(--foreground));
+}
+
+/* Override ALL text elements within article content */
+.article-content *,
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6,
+.article-content p,
+.article-content div,
+.article-content span,
+.article-content li,
+.article-content blockquote,
+.article-content strong,
+.article-content em,
+.article-content b,
+.article-content i {
+  font-family: var(--article-font-family) !important;
+  line-height: var(--article-line-height) !important;
+  text-align: var(--article-text-align) !important;
+  transition: font-family 0.3s ease !important;
+}
+
+/* Specific typography styles */
+.article-content h1 {
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.article-content h2 {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.article-content h3 {
+  font-size: 1.25rem !important;
+  font-weight: bold !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.article-content p {
+  margin-bottom: 1rem !important;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1rem 0 !important;
+  padding-left: 1.5rem !important;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem !important;
+}
+
+.article-content blockquote {
+  border-left: 4px solid hsl(var(--border)) !important;
+  padding-left: 1rem !important;
+  font-style: italic !important;
+  margin: 1.5rem 0 !important;
+  opacity: 0.8 !important;
+}
+
+/* Code blocks should always use Fira Code */
+.article-content pre,
+.article-content code,
+.article-content .hljs {
+  font-family: var(--font-fira-code), 'Courier New', monospace !important;
+}
+
+.article-content pre {
+  background-color: hsl(var(--muted)) !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  overflow-x: auto !important;
+  margin: 1.5rem 0 !important;
+}
+
+.article-content code:not(pre code) {
+  background-color: hsl(var(--muted)) !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Font family classes for dynamic switching */
+.font-noto-sans {
+  font-family: var(--font-noto-sans), sans-serif;
+}
+
+.font-noto-serif {
+  font-family: var(--font-noto-serif), serif;
+}
+
+.font-fira-code {
+  font-family: var(--font-fira-code), monospace;
 }

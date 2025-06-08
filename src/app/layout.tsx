@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fira_Code, Geist, Noto_Sans, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/analytics";
 import { Providers } from "@/components/providers";
@@ -9,7 +9,22 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+});
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  variable: "--font-noto-sans",
+});
+const notoSerif = Noto_Serif({
+  subsets: ["latin"],
+  variable: "--font-noto-serif",
+});
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  variable: "--font-fira-code",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(publicConf.host),
@@ -47,9 +62,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Analytics />
-      </head>
+      </head>{" "}
       <body
-        className={cn(inter.className, "flex flex-col min-h-svh min-w-80 justify-center")}
+        className={cn(
+          geist.variable,
+          notoSans.variable,
+          notoSerif.variable,
+          firaCode.variable,
+          "flex flex-col min-h-svh min-w-80 justify-center"
+        )}
       >
         <Providers>
           {children}

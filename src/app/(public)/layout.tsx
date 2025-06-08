@@ -1,7 +1,8 @@
+import path from "path";
 import { auth } from "@/auth";
 import CatalystBadge from "@/components/footer/catalyst-badge";
 import { Button } from "@/components/ui/button";
-import { IconBookmark, IconNotebook } from "@tabler/icons-react";
+import { IconBookmark, IconNotebook, IconWreckingBall } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
